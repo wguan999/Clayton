@@ -1,0 +1,16 @@
+<apex:page standardController="Account" extensions="OpportunityVisibilityExtension"
+  	showHeader="true" sideBar="true" >
+   <apex:sectionHeader title="Opportunities">
+	  	<apex:pageBlock >
+               <apex:pageMessages />
+			<apex:pageBlockTable value="{!opportunities}" var="opportunity" rowClasses="odd,even" >
+				<apex:column headerValue="Name" >
+					<apex:outputText value="{!opportunity.Name}"/>
+				</apex:column>
+				<apex:column headerValue="Amount" >
+					<apex:outputText value="{!opportunity.Amount}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+	   	</apex:pageBlock>
+	</apex:sectionHeader>
+</apex:page>

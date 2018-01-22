@@ -1,0 +1,51 @@
+<apex:page controller="MassEditInterestsController">
+ <script type="text/javascript"> 
+    function valueChanged(changedField)
+    {  
+        document.getElementById(changedField).checked = true;
+    }   
+ </script>
+    <apex:sectionHeader subtitle="{!interestSetup.Name}" title="Edit/Delete">
+ 	   	<apex:form >
+	   		<apex:pageBlock id="showstate">
+				<apex:pageMessages />
+		        <apex:pageBlockTable value="{!interestWrappers}" var="interestWrapper">
+		           	<apex:column >
+						<apex:facet name="header">
+		      					<apex:inputCheckBox value="{!selectAllCheckbox}"> 
+		       						<apex:actionSupport event="onclick" action="{!selectAll}" rerender="showstate"/>
+		      					</apex:inputCheckBox>
+		      				</apex:facet>
+		           		<apex:inputCheckbox value="{!interestWrapper.selected}"
+		           			onclick="callSelectionScript('{!interestWrapper.interest.Id}',this.checked)"/>
+		           	</apex:column>
+					<apex:column headerValue="Contact" width="20%">
+						<apex:outputField value="{!interestWrapper.interest.Contact__c}"/>
+					</apex:column>
+					<apex:column headerValue="Lead" width="20%">
+						<apex:outputField value="{!interestWrapper.interest.Lead__c}"/>
+					</apex:column>
+					<apex:column headerValue="Degree" width="15%">
+						<apex:inputField value="{!interestWrapper.interest.Degree__c}" onchange="valueChanged('{!$Component.chkChanged}')"/>
+					</apex:column>
+					<apex:column headerValue="Notes" width="45%">
+						<apex:inputField value="{!interestWrapper.interest.Notes__c}" onchange="valueChanged('{!$Component.chkChanged}')" />
+					</apex:column>
+					<apex:column style="display:none">
+		           		<apex:inputCheckbox value="{!interestWrapper.changed}" id="chkChanged"/>
+					</apex:column>
+		       	</apex:pageBlockTable>
+				<apex:pageBlockButtons location="both" >
+ 					<apex:commandButton id="idPrevious" action="{!previous}" value="Previous" reRender="showstate" disabled="{! !hasPrevious}"/>
+ 					<apex:commandButton id="idNext" action="{!next}" value="Next" reRender="showstate" disabled="{! !hasNext}"/>
+					<apex:commandButton id="idDel" action="{!deleteInterests}" value="Delete" title="Delete selected contacts. Changes of other contacts will be discarded."
+			        		styleclass="updateButton"/>
+					<apex:commandButton id="idSave" action="{!saveInterests}" value="Update" title="Update all changes"
+			        		styleclass="updateButton"/>
+					<apex:commandButton action="{!close}" value="Close" rerender="showstate"
+			        		styleclass="updateButton"/>
+				</apex:pageBlockButtons>
+	       </apex:pageBlock>
+	   </apex:form>
+ 	</apex:sectionHeader>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page controller="AttachmentViewer" showHeader="false">
+<apex:form >
+ <apex:pageblock id="Case" title="Attachments" >
+            <apex:pageblockTable value="{!att}" var="a">
+            <apex:column headerValue="Download">
+<apex:outputLink value="{!URLFOR($Action.Attachment.Download, a.Id)}" 
+target="_blank">View</apex:outputLink>
+            </apex:column>
+           <apex:column value="{!a.Name}" headerValue="File Name"/>
+            <apex:column value="{!a.ContentType}" headerValue="content type"/>
+           <apex:column value="{!a.BodyLength }" headerValue="Size"/>
+            <apex:column value="{!a.Parent.Type}" headerValue="Object Name"/>
+            <apex:column value="{!a.Parent.Name}" headerValue="Record Name" />
+            <apex:column value="{!a.Owner.Name}" headerValue="Owner Name"/>
+            <apex:column value="{!a.LastModifiedDate}"/>  
+            </apex:pageblockTable>
+  </apex:pageblock>
+        
+</apex:form>
+        
+</apex:page>

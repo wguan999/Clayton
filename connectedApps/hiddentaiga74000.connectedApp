@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>wguan@everfusion.com</contactEmail>
+    <label>hiddentaiga74000</label>
+    <oauthConfig>
+        <callbackUrl>https://hidden-taiga-74000.herokuapp.com/_auth</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hu_lVRbH3XMVpKoLgijGD6rIaWtDkRGQAP0ve1rgeNVdBG7RjZfjrh3ne9DH8FRIiDI58.P</consumerKey>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

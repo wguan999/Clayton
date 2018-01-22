@@ -1,0 +1,34 @@
+<apex:page standardController="Lead" recordSetVar="leadList"
+           extensions="ObjectAddToInterestsExt">
+   <apex:sectionHeader title="Lead" subtitle="Add Interests">
+		<apex:form >
+	 		<apex:pageBlock >
+               <apex:pageMessages />
+	 			<apex:pageBlockSection title="Select Interests" collapsible="false" columns="1">
+					<apex:pageBlockTable value="{!interestWrappers}" var="interestWrapper" rowClasses="odd,even" id="interestTable">
+						<apex:column >
+							<apex:commandLink action="{!removeInterestSetup}" value="Del" reRender="interestTable">
+								<apex:param name="rowId" value="{!interestWrapper.rowId}"/>
+							</apex:commandLink>
+						</apex:column>
+						<apex:column headerValue="Interest" width="40%">
+							<apex:inputField value="{!interestWrapper.interest.Interest_Setup__c}"/>
+						</apex:column>
+						<apex:column headerValue="Default Degree" width="20%">
+							<apex:inputField value="{!interestWrapper.interest.Degree__c}"/>
+						</apex:column>
+						<apex:column headerValue="Default Notes" width="40%">
+							<apex:inputField value="{!interestWrapper.interest.Notes__c}"/>
+						</apex:column>
+					</apex:pageBlockTable>
+				</apex:pageBlockSection>
+	           	<apex:pageBlockButtons location="both" >
+					<apex:commandButton id="add" action="{!addInterestSetup}" value="Add Interest Setup"
+					        		styleclass="updateButton"  reRender="interestTable" disabled="{!noSelection}"/>
+	                 <apex:commandButton value="Save Interests" action="{!saveInterests}" disabled="{!noSelection}"/>
+	                 <apex:commandButton value="Close" action="{!cancel}"/>
+	             </apex:pageBlockButtons>
+ 		 	</apex:pageBlock>
+ 	 	</apex:form>
+ 	 </apex:sectionHeader>
+ </apex:page>

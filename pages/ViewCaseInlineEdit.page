@@ -1,0 +1,5 @@
+<apex:page standardController="Case" standardStylesheets="true">
+    <apex:form id="theForm"> 
+        <apex:detail subject="{!case.Id}" relatedList="true" relatedListHover="true" inlineEdit="true" reRender="theForm" /> 
+    </apex:form> 
+</apex:page>

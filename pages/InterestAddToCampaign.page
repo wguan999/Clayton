@@ -1,0 +1,21 @@
+<apex:page standardController="Interest__c" recordSetVar="interests" extensions="InterestAddToCampaignExt">
+    <apex:sectionHeader subtitle="Add Members" title="Campaign">
+        <apex:form >
+            <apex:pageBlock title="Select a campaign and member status" mode="edit">
+                <apex:pageMessages /> 
+                <apex:pageBlockSection columns="1">
+                    <apex:inputField label="Campaign:" value="{!campaignMember.CampaignId}" />
+                    <apex:inputField label="Member Status:" value="{!campaignMember.status}"/>
+                    <apex:selectRadio label="Existing Members:" value="{!overwrite}">
+                        <apex:selectOption itemLabel="Do not override the member status" itemValue="false"/>
+                        <apex:selectOption itemLabel="Override the member status" itemValue="true"/>
+                    </apex:selectRadio>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Add to Campaign" action="{!addToCompaign}" disabled="{!noSelection}"/>
+                    <apex:commandButton value="Close" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:sectionHeader>
+</apex:page>

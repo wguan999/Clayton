@@ -1,0 +1,17 @@
+<apex:page controller="exampleCon">
+    <apex:form >
+        <apex:outputpanel id="counter">
+            <apex:outputText value="Click Me!: {!count}"/>
+            <apex:actionSupport event="onclick" 
+                                action="{!incrementCounter}" 
+                                rerender="counter" status="counterStatus"/>
+        </apex:outputpanel>
+        <apex:actionStatus id="counterStatus" 
+                           startText=" (incrementing...)" 
+                           stopText=" (done)"/>
+    </apex:form>
+     <apex:canvasApp applicationName="Hello World" namespacePrefix="Everfusion"
+height="400px" width="750px"
+parameters="{accountId:'xxxx'}"
+/>
+</apex:page>

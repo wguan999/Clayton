@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://wguancanvasquickstart.herokuapp.com/canvas.jsp</canvasUrl>
+        <locations>Chatter</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>wguan@everfusion.com</contactEmail>
+    <iconUrl>https://wguancanvasquickstart.herokuapp.com/icon.png</iconUrl>
+    <label>wguancanvasquickstart</label>
+    <logoUrl>https://wguancanvasquickstart.herokuapp.com/logo.png</logoUrl>
+    <oauthConfig>
+        <callbackUrl>https://wguancanvasquickstart.herokuapp.com/sdk/callback.html</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hu_lVRbH3XMVo9zOB32aOd9d9HTvDpUdncEgHVtSNvQZ4l5TyKFvYPkZAY2N6Zh2r.JQwp6</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Chatter</scopes>
+    </oauthConfig>
+</ConnectedApp>

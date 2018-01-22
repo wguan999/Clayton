@@ -1,0 +1,2 @@
+<aura:component controller="MyContactListController2">	
+</aura:component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://weihellothere.herokuapp.com/canvas</canvasUrl>
+        <locations>Chatter</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>wguan@everfusion.com</contactEmail>
+    <iconUrl>https://weihellothere.herokuapp.com/icon.png</iconUrl>
+    <infoUrl>https://weihellothere.herokuapp.com/welcome.jsp</infoUrl>
+    <label>WeiHelloThere</label>
+    <logoUrl>https://weihellothere.herokuapp.com/logo.png</logoUrl>
+    <oauthConfig>
+        <callbackUrl>https://weihellothere.herokuapp.com/callback</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hu_lVRbH3XMVsSSs0r2K.MlC0xxFfrITKXTIQNE9nvKIaIbpghWdocnckhZSMSf0VKQNq5V</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Chatter</scopes>
+    </oauthConfig>
+</ConnectedApp>

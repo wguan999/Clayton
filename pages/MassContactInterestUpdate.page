@@ -1,0 +1,34 @@
+<apex:page standardController="Contact" extensions="MassObjectInterestUpdateExt" 
+  	showHeader="true" sideBar="true" >
+  <apex:sectionHeader subtitle="{! contact.Salutation} {! contact.Name}" title="Interests">
+	 	<apex:form >
+		  	<apex:pageBlock id="interestBlock">
+                <apex:pageMessages />
+				<apex:pageBlockTable value="{!interestWrappers}" var="interest" rowClasses="odd,even" >
+					<apex:column >
+						<apex:commandLink action="{!removeInterest}" value="Del" reRender="interestBlock">
+							<apex:param name="rowId" value="{!interest.rowId}"/>
+						</apex:commandLink>
+					</apex:column>
+					<apex:column headerValue="Interest" width="40%">
+						<apex:inputField value="{!interest.interest.Interest_Setup__c}"/>
+					</apex:column>
+					<apex:column headerValue="Degree" width="20%">
+						<apex:inputField value="{!interest.interest.Degree__c}"/>
+					</apex:column>
+					<apex:column headerValue="Notes" width="40%">
+						<apex:inputField value="{!interest.interest.Notes__c}"/>
+					</apex:column>
+				</apex:pageBlockTable>
+                <apex:pageBlockButtons location="both">
+					<apex:commandButton id="add" action="{!addInterest}" value="Add"
+			        		styleclass="updateButton"/>
+					<apex:commandButton id="save" action="{!saveInterests}" value="Save" reRender="interestBlock"
+			        		styleclass="updateButton"/>
+					<apex:commandButton id="close" action="{!close}" value="Close" 
+			        		styleclass="updateButton"/>
+			     </apex:pageBlockButtons>
+		   	</apex:pageBlock>
+		</apex:form>
+	</apex:sectionHeader>
+</apex:page>

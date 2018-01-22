@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interest</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Interests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Degree --></label>
+        <name>Degree__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t Like</masterLabel>
+            <translation><!-- Don&apos;t Like --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Like</masterLabel>
+            <translation><!-- Like --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Sure</masterLabel>
+            <translation><!-- Not Sure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Interest Setup --></label>
+        <name>Interest_Setup__c</name>
+        <relationshipLabel><!-- Interests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Interests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- Add_to_Campaign --></label>
+        <name>Add_to_Campaign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Task --></label>
+        <name>Create_Task</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Email --></label>
+        <name>Mass_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

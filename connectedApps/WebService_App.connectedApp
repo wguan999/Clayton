@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://vast-basin-4849.herokuapp.com/examples/hello-world/index.jsp</canvasUrl>
+        <locations>Visualforce</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>wguan99@gmail.com</contactEmail>
+    <iconUrl>https://vast-basin-4849.herokuapp.com/examples/hello-world/logo.png</iconUrl>
+    <label>WebService App</label>
+    <logoUrl>https://vast-basin-4849.herokuapp.com/images/salesforce.png</logoUrl>
+    <oauthConfig>
+        <callbackUrl>https://vast-basin-4849.herokuapp.com/sdk/callback.html</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hu_lVRbH3XMVi1.DaX2tyAlRyxy17dToDlSKgkSHS7eEDr9A0se0Z8i7O9YU.GZvQLfypgE</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+    </oauthConfig>
+</ConnectedApp>

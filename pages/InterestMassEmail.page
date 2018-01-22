@@ -1,0 +1,19 @@
+<apex:page standardController="Interest__c" recordSetVar="interests" extensions="InterestMassEmailExt">
+   <apex:sectionHeader subtitle="Mass Email" title="Send Emails">
+        <apex:form >
+            <apex:pageBlock mode="edit">
+                <apex:pageMessages />
+                <apex:pageBlockSection columns="1">
+ 					<apex:selectList label="Select Email Template" 
+ 							size="1" multiselect="false" value="{!emailTemplateId}">
+                    	<apex:selectOptions value="{!templates}"/>
+                    </apex:selectList>  
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="both">
+                    <apex:commandButton value="Send Emails" action="{!sendEmails}" disabled="{!noSelection}"/>
+                    <apex:commandButton value="Close" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+             </apex:pageBlock>
+        </apex:form>
+    </apex:sectionHeader>
+</apex:page>

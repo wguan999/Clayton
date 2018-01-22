@@ -1,0 +1,24 @@
+<apex:page standardController="Interest__c" recordSetVar="interests" extensions="InterestCreateTaskExt">
+   <apex:sectionHeader subtitle="New Task" title="Task">
+        <apex:form >
+            <apex:pageBlock title="Input Task Information" mode="edit">
+                <apex:pageMessages />
+                <apex:pageBlockSection columns="2">
+                    <apex:inputField label="Assigned To" value="{!task.OwnerId}" />
+                    <apex:inputField label="Status" value="{!task.status}"/>
+                    <apex:inputField label="Subject" value="{!task.subject}"/>
+                    <apex:inputField label="Related To" value="{!task.WhatId}"/>
+                    <apex:inputField label="Due Date" value="{!task.ActivityDate}"/>
+                    <apex:inputField label="Reminder" value="{!task.ReminderDateTime}"/>
+                    <apex:inputTextarea label="Comments" value="{!task.Description}"
+                    	style="width:300px;height:100px"/>
+                    <apex:inputField label="Priority" value="{!task.Priority}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="both">
+                    <apex:commandButton value="Create" action="{!creatTask}" disabled="{!noSelection}"/>
+                    <apex:commandButton value="Close" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:sectionHeader>
+</apex:page>

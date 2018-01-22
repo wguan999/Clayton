@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SelfServSelect</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>IsPublished</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsPublishedInPublicKb</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SolutionName</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SolutionNote</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+                <reviewed>false</reviewed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+                <reviewed>true</reviewed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <reviewed>false</reviewed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>AllReviewedSolutions</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SOLUTION.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Reviewed Solutions</label>
+    </listViews>
+    <listViews>
+        <fullName>AllUnreviewedSolutions</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SOLUTION.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Unreviewed Solutions</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>SOLUTION.ISSUE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SOLUTION.SOLUTION_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SOLUTION.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CORE.USERS.ALIAS</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>SOLUTION.ISSUE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SOLUTION.SOLUTION_NUMBER</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>SOLUTION.ISSUE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>SOLUTION.SOLUTION_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>SOLUTION.ISSUE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RELEVANCE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SOLUTION.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SOLUTION.TIMES_USED</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SOLUTION.LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <webLinks>
+        <fullName>Test_Script</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Test Script</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/29.0/integration.js&quot;)} 
+finalurl=&apos;/_ui/core/email/author/EmailAuthor?p3_lkid={!Case.Id}&amp;rtype=003&amp;retURL=%2F{!Case.Id}&amp;p2_lkid={!Case.ContactId}&apos;; 
+
+//alert(typeof(top.isServiceDeskPage)); 
+//var consoleClass = document.getElementsByClassName(&quot;support-servicedesk-navigator&quot;); 
+//alert(consoleClass[0]); 
+//alert(document.getElementById(&apos;test&apos;)); 
+//if(typeof(top.isServiceDeskPage)==&apos;boolean&apos; &amp;&amp; top.isServiceDeskPage) 
+if(sforce.console.isInConsole()) 
+{ 
+//sforce.console.openPrimaryTab(null, host, true,&apos;Attach File&apos;,&apos;/&apos;+caseId,&apos;Attach File&apos;); 
+
+var showTabId = function showTabId(result) 
+{ 
+//sforce.console.openPrimaryTab(result.id,finalurl,true); 
+//sforce.console.openPrimaryTab(null,finalurl,true); 
+sforce.console.openSubtab(result.id,finalurl, true, &apos;Send an Email&apos;, null, null, null); 
+}; 
+sforce.console.getFocusedPrimaryTabId(showTabId); 
+} 
+else 
+{ 
+newWin=window.open(finalurl,&apos;_top&apos;); //Its Working 
+newWin.focus(); 
+}</url>
+    </webLinks>
+</CustomObject>
